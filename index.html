@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SafeWord — Family Protection from AI Voice Scams</title>
+<meta name="description" content="Protect your family from AI voice-clone 'family emergency' scams: family codeword setup, practice drills, in-call panic flow, scam-message checker. Free, no account, works offline. English / Hindi / Malayalam.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#b3540e">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img src="icon.svg" alt="" class="logo">
+    <div>
+      <div class="appname">SafeWord</div>
+      <div class="tagline" data-i18n="tagline">A voice can be faked. A family secret can't.</div>
+    </div>
+  </div>
+  <div class="top-actions">
+    <select id="langSel" aria-label="Language">
+      <option value="en">English</option>
+      <option value="hi">हिन्दी</option>
+      <option value="ml">മലയാളം</option>
+    </select>
+    <button id="themeBtn" class="icon-btn" aria-label="Dark mode">🌙</button>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button data-view="home" class="tab active">🏠 <span data-i18n="nav_home">Home</span></button>
+  <button data-view="drill" class="tab">🎭 <span data-i18n="nav_drill">Practice</span></button>
+  <button data-view="check" class="tab">🔍 <span data-i18n="nav_check">Check a message</span></button>
+  <button data-view="learn" class="tab">📖 <span data-i18n="nav_learn">Learn</span></button>
+  <button data-view="help" class="tab">🆘 <span data-i18n="nav_help">Help</span></button>
+</nav>
+
+<main id="view" class="view"></main>
+
+<button id="panicFab" class="panic-fab">🚨 <span data-i18n="panic_btn">Suspicious call?</span></button>
+
+<footer class="foot">
+  <span data-i18n="foot_note">Free forever · No account · Everything stays on this phone · Made to protect families</span>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('service-worker.js').catch(function(){}); }
+</script>
+</body>
+</html>
